@@ -23,15 +23,19 @@ public class RegisterAction extends ActionSupport
 	private Map m;
 
 
-
+	private Connection getConnection() throws SQLException {
+		java.sql.Connection con;
+		con = ConnectionFactory.getInstance().getConnection();
+		return con;
+	}
 
 	public String register()
 			throws ClassNotFoundException, SQLException
 			{
 
-
-		Class.forName("com.mysql.jdbc.Driver");
-		this.connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/bookstore","root","root");
+		connection = getConnection();
+	
+		
 		this.addUser = this.connection.prepareStatement("INSERT INTO user(name, email, address, username, password) VALUES(?,?,?,?,?)");
 		this.addUser.setString(1, getName());
 		this.addUser.setString(2, getEmail());
@@ -41,7 +45,7 @@ public class RegisterAction extends ActionSupport
 		this.addUser.executeUpdate();
 	//	this.addUser.close();
 	//	this.connection.close();
-		m.put("b", getName());
+		//m.put("b", getName());
 		return "success";
 			}
 

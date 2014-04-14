@@ -14,7 +14,7 @@
 		</action>
 
 		<action name="RegisterAction" class="login.RegisterAction" method = "register">
-		<result name="success">index.jsp</result>
+		<result name="success">welcome.jsp</result>
 		<result name="failure">index.jsp</result>
 		</action>
 		
@@ -22,6 +22,9 @@
 		<result name="success">index.jsp</result>
 		<result name="failure">index.jsp</result>
 		</action>
-		
+	<action name="AdminLoginAction" class="login.AdminLoginAction" method="execute">
+			<result name="failure">adminloginform.jsp</result>
+			<result name="success">adminWelcome.jsp</result>
+		</action>
 	</package>
 </struts>

@@ -15,9 +15,9 @@
 	<div class="row">
 		 <form class="form-horizontal" action = RegisterAction>
             <fieldset>
-                <!-- Address form -->
          
-                <h3>Edit Personal Information</h3>
+         
+                <h3>Register</h3>
         
 
                 <!-- first-name input-->

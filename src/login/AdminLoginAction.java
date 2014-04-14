@@ -1,6 +1,7 @@
 package login;
 
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,10 +16,10 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 
-public class LoginAction extends ActionSupport 
+public class AdminLoginAction extends ActionSupport 
 {
-	private String loginUserName;
-	private String loginPassword;
+	private String adminLoginUsername;
+	private String adminLoginPassword;
 	private Connection connection;
 	private WebSession ws;
 	private PreparedStatement checkDuplicate;
@@ -29,23 +30,23 @@ public class LoginAction extends ActionSupport
 		con = ConnectionFactory.getInstance().getConnection();
 		return con;
 	}
-	public String login() 
+	public String execute() 
 			throws SQLException, ClassNotFoundException
 			{
-loginUserName = getLoginUserName();
-loginPassword = getLoginPassword();
+adminLoginUsername = getadminLoginUsername();
+adminLoginPassword = getadminLoginPassword();
 connection = getConnection();
-		checkDuplicate = connection.prepareStatement("SELECT username, password FROM user WHERE username=? AND password= ?");
-		checkDuplicate.setString(1, loginUserName);
-		checkDuplicate.setString(2, loginPassword);
+		checkDuplicate = connection.prepareStatement("SELECT username, password FROM admin WHERE username=? AND password= ?");
+		checkDuplicate.setString(1, adminLoginUsername);
+		checkDuplicate.setString(2, adminLoginPassword);
 		ResultSet results = checkDuplicate.executeQuery();
 		System.out.println("#result" + results);
 		if (results.next()) {
 			System.out.println("hey gals");
-			//ws.put("user", loginUserName);
+			//ws.put("user", adminLoginUsername);
 			Map session = ActionContext.getContext().getSession();
-			session.put("logined","true");
-			session.put("user", loginUserName);
+	//		session.put("logined","true");
+	//		session.put("admin", adminLoginUsername);
 			
 			return "success";
 		}else{
@@ -61,20 +62,20 @@ connection = getConnection();
 	    {
 	    	this.m=m;
 	    }
-	public void setLoginUserName(String loginUserName) {
-		this.loginUserName = loginUserName;
+	public void setadminLoginUsername(String adminLoginUsername) {
+		this.adminLoginUsername = adminLoginUsername;
 	}
 
-	public String getLoginUserName() {
-		return this.loginUserName;
+	public String getadminLoginUsername() {
+		return this.adminLoginUsername;
 	}
 
-	public void setLoginPassword(String loginPassword) {
-		this.loginPassword = loginPassword;
+	public void setadminLoginPassword(String adminLoginPassword) {
+		this.adminLoginPassword = adminLoginPassword;
 	}
 
-	public String getLoginPassword() {
-		return this.loginPassword;
+	public String getadminLoginPassword() {
+		return this.adminLoginPassword;
 	}
 //	public String logout() {
 //		WebSession.remove("current");
