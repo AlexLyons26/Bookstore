@@ -23,8 +23,18 @@
 		<result name="failure">index.jsp</result>
 		</action>
 	<action name="AdminLoginAction" class="login.AdminLoginAction" method="execute">
-			<result name="failure">adminloginform.jsp</result>
+			<result name="success">adminloginform.jsp</result>
 			<result name="success">adminWelcome.jsp</result>
+		</action>
+		
+		<action name="BookAction" class="action.BookAction" method = "addBook">
+		<result name="success">AddSuccess.jsp</result>
+		<result name="failure">AddBook.jsp</result>
+		</action>
+		
+		<action name="BookAction" class="action.BookAction" method = "viewBooks">
+		<result name="success">viewbooks.jsp</result>
+		<result name="failure">adminWelcome.jsp</result>
 		</action>
 	</package>
 </struts>

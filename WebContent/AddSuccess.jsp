@@ -4,18 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin Home</title>
+<title>Insert title here</title>
 </head>
 <body>
-`						<form action="AddBook.jsp">
-						<input type="submit" value="Add Book">
-						</form>
-						
-						
-							<form action="viewbooks.jsp">
-						<input type="submit" value="View Books">
-						</form>
-						
-						
+<h1>A new book has been added!</h1>
 </body>
 </html>

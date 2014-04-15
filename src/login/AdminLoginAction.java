@@ -51,7 +51,7 @@ connection = getConnection();
 			return "success";
 		}else{
 
-			return "failure";
+		return "success";
 		}
 
 

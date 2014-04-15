@@ -43,9 +43,6 @@ public class RegisterAction extends ActionSupport
 		this.addUser.setString(4, getUsername());
 		this.addUser.setString(5, getPassword());
 		this.addUser.executeUpdate();
-	//	this.addUser.close();
-	//	this.connection.close();
-		//m.put("b", getName());
 		return "success";
 			}
 

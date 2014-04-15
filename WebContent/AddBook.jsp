@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Add A Book</title>
 </head>
 <body>
-
-</body>
-</html>
-
-
-  <!-- first-name input-->
+<div class="container">
+	<div class="row">
+		 <form class="form-horizontal" action = BookAction>
+            <fieldset>
+         
+         
                 <div class="control-group">
                     <label class="control-label">Title</label>
                     <div class="controls">
@@ -43,28 +43,9 @@
                 <div class="control-group">
                     <label class="control-label">Category</label>
                     <div class="controls">
-                        <input id="contactnumber" name="contactnumber" type="text" placeholder="contactnumber"
+                        <input id="category" name="category" type="text" placeholder="category"
                         class="input-xlarge">
                         <p class="help-block"></p>
-                    </div>
-                </div>
-                 
-        
-           
-                 <!-- Category select -->
-                <div class="control-group">
-                    <label class="control-label">Category</label>
-                    <div class="controls">
-                        <select id="category" name="category" class="input-xlarge">
-                            <option value="" selected="selected">(please select a category)</option>
-                            <option value="AF">Fiction</option>
-                            <option value="AL">Non-Fiction</option>
-                            <option value="DZ">Special Interest</option>
-                            <option value="AS">Young Readers</option>
-                            <option value="AD">Travel</option>
-                            <option value="AO">Other</option>
-                        
-                        </select>
                     </div>
                 </div>
           
@@ -78,3 +59,5 @@
 	</div>
 
 </body>
+
+</html>
