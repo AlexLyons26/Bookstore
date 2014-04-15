@@ -13,7 +13,7 @@ import login.ConnectionFactory;
 import com.opensymphony.xwork2.ActionSupport;
 
 
-public class BookAction extends ActionSupport
+public class BookAction extends ActionSupport 
 {
 
 	private String title;
